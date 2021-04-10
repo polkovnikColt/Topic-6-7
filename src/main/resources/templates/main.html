@@ -1,0 +1,13 @@
+<header th:insert="components/headerWrapper::headerWrapper"></header>
+<header th:insert="components/navbar::navbar"/>
+<div class="container p-2">
+    <div th:insert = "book::bookFragment"></div>
+    <button id = "get-all"
+            type="submit"
+            class="btn btn-outline-success mx-auto">Переглянути всі книжки</button>
+</div>
+    <div id ="root"
+            class="row">
+
+    </div>
+<footer th:insert="components/footerWrapper::footerWrapper"></footer>

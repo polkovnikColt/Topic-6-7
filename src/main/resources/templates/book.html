@@ -1,0 +1,30 @@
+
+<div th:fragment = "bookFragment"
+        class="container">
+        <div class="row p-2">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Назва книги</label>
+                <input name ="title"
+                       type="text"
+                       class="form-control"
+                       id="exampleFormControlInput1" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">ISBN</label>
+                <input name ="isbn"
+                       type="string"
+                       class="form-control"
+                       id="exampleFormControlInput2" >
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Автор</label>
+                <input name ="author"
+                       type="text"
+                       class="form-control"
+                       id="exampleFormControlInput3" >
+            </div>
+            <button id = "add-book"
+                    type="submit"
+                    class="btn btn-outline-success mx-auto">Додати книжку</button>
+        </div>
+</div>
