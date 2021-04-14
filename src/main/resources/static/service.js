@@ -14,10 +14,11 @@ const validateISBN = isbn => {
 }
 
 const validateUser = (username, password) => {
-    return username !== ""
-        && password !== ""
+    const correctPassword = password !== ""
         && password.length > 8
-        && password.length < 20;
+        && password.length < 20;;
+    const correctUsername = username !== "" && username.match("^[A-Za-z0-9]+$");
+    return correctPassword && correctUsername;
 }
 
 const callGet = async (url) => {
@@ -106,7 +107,8 @@ $("#add-user").on("click", async (e) => {
             repaintRules();
         }
     } else {
-        alert("Password must have length more than 8 and less than 20");
+        alert("Password must have length more than 8 and less than 20 and username " +
+            "can contains only letters and numbers");
     }
 })
 
