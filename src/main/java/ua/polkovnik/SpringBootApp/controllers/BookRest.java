@@ -36,17 +36,11 @@ public class BookRest {
         return null;
     }
 
-//    @GetMapping("/book/{isbn}")
-//    public ResponseEntity<?> getById(@PathVariable("isbn") String isbn) {
-//        Optional<Book> book = bookService.getBookByIsbn(isbn);
-//        return book.isPresent()
-//                ? ResponseEntity.ok(book.get())
-//                : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//    }
-
     @PostMapping("/addBook")
-    public @ResponseBody Book addBook(@RequestBody Book book) {
-        Book savedBook = bookService.addBook(book);
-        return savedBook;
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+        if(bookService.addBook(book)){
+            return ResponseEntity.ok(book);
+        }
+        return ResponseEntity.badRequest().build();
     }
 }

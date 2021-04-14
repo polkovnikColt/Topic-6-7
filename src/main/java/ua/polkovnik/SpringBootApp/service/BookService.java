@@ -9,7 +9,7 @@ import java.util.Optional;
 @Service
 public interface BookService {
 
-	Book addBook(final Book bookToSave) ;
+	boolean addBook(final Book bookToSave) ;
 
 	Optional<Book> getBookByIsbn(String isbn);
 

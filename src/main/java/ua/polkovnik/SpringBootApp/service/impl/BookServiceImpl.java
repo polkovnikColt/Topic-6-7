@@ -15,9 +15,12 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookRepository bookRepository;
 
-	public Book addBook(final Book bookToSave) {
-		System.out.println(bookToSave);
-		return bookRepository.save(bookToSave);
+	public boolean addBook(final Book bookToSave) {
+		Book book =  bookRepository.save(bookToSave);
+		if(!book.getTitle().equals("")){
+			return true;
+		}
+		return false;
 	}
 
 	public Optional<Book> getBookByIsbn(String isbn) {
